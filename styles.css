@@ -1,0 +1,118 @@
+:root {
+    --bg: #1a1b26;
+    --surface: rgba(26, 27, 38, 0.6);
+    --text: #a9b1d6;
+    --muted: #565f89;
+    --accent: #7aa2f7;
+    --accent-glow: #7dcfff;
+    --accent-secondary: #bb9af7;
+    --glass-border: rgba(169, 177, 214, 0.1);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Courier New', Courier, monospace
+}
+
+body {
+    background-color: var(--bg);
+    background-image:
+        radial-gradient(circle at 15% 50%, rgba(1, 162, 255, 0.171) 0%, transparent 50%),
+        radial-gradient(circle at 85% 30%, rgba(69, 44, 117, 0.301) 0%, transparent 50%),
+        radial-gradient(circle at 50% 0%, rgba(69, 115, 141, 0.1) 0%, transparent 50%);
+    background-attachment: fixed;
+    color: var(--text);
+    min-height: 100vh;
+}
+
+.page {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 80px 40px;
+    display: grid;
+    gap: 96px;
+}
+
+.hero {
+    display: grid;
+    gap: 32px;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    letter-spacing: -0.05em;
+    font-weight: 600;
+}
+
+.hero p {
+    max-width: 520px;
+    line-height: 1.6;
+    color: var(--muted);
+}
+
+.glass {
+    backdrop-filter: blur(24px) saturate(180%);
+    -webkit-backdrop-filter: blur(24px) saturate(180%);
+    background: var(--surface);
+    border: 1px solid var(--glass-border);
+    border-top: 1px solid rgba(169, 177, 214, 0.2);
+    border-radius: 24px;
+    padding: 40px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+}
+
+.actions {
+    display: flex;
+    gap: 28px;
+    margin-top: 12px;
+}
+
+.action {
+    text-decoration: none;
+    font-size: 0.95rem;
+    color: var(--text);
+    border-bottom: 1px solid transparent;
+    padding-bottom: 4px;
+}
+
+.action:hover {
+    border-color: var(--accent);
+    color: var(--accent-glow);
+    text-shadow: 0 0 12px rgba(125, 207, 255, 0.4);
+}
+
+.info {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+.info h3 {
+    color: var(--accent);
+    margin-bottom: 10px;
+}
+
+.info p {
+    font-size: 0.95rem;
+    color: var(--muted);
+}
+
+footer {
+    font-size: 0.75rem;
+    color: var(--muted);
+    opacity: 0.6;
+}
+
+@media (max-width: 900px) {
+    .page {
+        padding: 48px 24px;
+        gap: 64px;
+    }
+
+    .info {
+        grid-template-columns: 1fr;
+    }
+
+}
